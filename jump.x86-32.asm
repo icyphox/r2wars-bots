@@ -1,12 +1,23 @@
 ; when i say jump -- you say how high
 
-mov eax, 0xebfeebfe
-mov ebx, eax
+mov eax, 0xffffffff
 mov ecx, eax
 mov edx, eax
+mov ebx, eax
 mov ebp, eax
-mov edi, eax
-mov esp, 0x3fc
-mov esi, 0x3fd
-mov [esi], 0xe6ff60
-jmp esi
+mov esi, eax
+
+check:
+    mov edi, 0x000
+    cmp [edi], 0
+    je planb
+    mov esp, 0x400
+    mov [edi], 0xe7ff6060
+    jmp edi
+
+planb:
+    mov edi, 0x3fb
+    mov [edi], 0xe7ff6060
+    mov esp, 0x3fa
+    jmp edi
+
