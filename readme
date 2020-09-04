@@ -1,0 +1,17 @@
+R2WARS BOTS
+
+My r2wars[0] bot attempts, for r2con2020[1].
+
+Debug using:
+
+   $ radare2 -c "e asm.arch=x86;
+     e asm.bits=32;
+     aei;
+     aeim;
+     wx "$(rasm2 -a x86 -b 32 -f $BOT.x86-32.asm)" @ 100;
+     aer PC=100;
+     aer SP=SP+100;
+     Vpp" malloc://1024
+
+[0]: https://github.com/radareorg/r2wars
+[1]: https://rada.re/con/2020
