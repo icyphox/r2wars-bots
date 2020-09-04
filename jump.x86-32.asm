@@ -7,17 +7,11 @@ mov ebx, eax
 mov ebp, eax
 mov esi, eax
 
-check:
-    mov edi, 0x000
-    cmp [edi], 0
-    je planb
-    mov esp, 0x400
-    mov [edi], 0xe7ff6060
-    jmp edi
-
-planb:
-    mov edi, 0x3fb
-    mov [edi], 0xe7ff6060
-    mov esp, 0x3fa
-    jmp edi
-
+mov edi, 0x000
+mov esp, 0x400
+mov [edi], 0x20fc8360
+mov [edi+4], 0xff600374
+mov [edi+8], 0x0400bce7
+mov [edi+12], 0xe7ff0000
+;mov [edi], 0xe7ff6060
+jmp edi
