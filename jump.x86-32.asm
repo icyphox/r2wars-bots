@@ -7,7 +7,7 @@ mov ebx, eax
 mov ebp, eax
 mov esi, eax
 
-mov edi, 0x000
+mov edi, 0xd
 mov esp, 0x400
 mov [edi], 0x20fc8360
 mov [edi+4], 0xff600374
